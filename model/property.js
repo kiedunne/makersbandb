@@ -1,15 +1,21 @@
 'use strict'
 
-function Property(owner) {
+function Property(id, owner) {
+  this._id = id;
   this._owner = owner;
   this._name = '';
   this._bedrooms = '';
   this._price = '';
   this._photo = '';
+  this._address = '';
 };
 
 // Property.prototype.isAvailable = function(date) {
 //   check if this property is in the joiner table on that date
+// };
+
+// Property.prototype.noLongerAvailable = function() {
+//   property is removed from joiner table
 // };
 
 Property.prototype.updateName = function(name) {
@@ -26,4 +32,8 @@ Property.prototype.updateBedrooms = function(size) {
 
 Property.prototype.updatePhoto = function(photo) {
   this._photo = photo;
+};
+
+Property.prototype.updateAddress = function(address) {
+  this._address = address;
 };

@@ -5,7 +5,7 @@ describe('Property', function() {
 var property;
 
   beforeEach(function() {
-    property = new Property('testOwner');
+    property = new Property(1, 'testOwner');
   });
 
   describe('can be created', function() {
@@ -39,6 +39,13 @@ var property;
     it('which can be set with updatePhoto', function() {
       property.updatePhoto('testURL');
       expect(property._photo).toEqual('testURL');
+    });
+  });
+
+  describe('has an address property', function() {
+    it('which can be set with updateAddress', function() {
+      property.updateAddress('testAddress');
+      expect(property._address).toEqual('testAddress');
     });
   });
 
