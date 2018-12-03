@@ -20,6 +20,6 @@ Booking.prototype.decline = function() {
 //     this._property.isAvailable();
 // };
 //
-// Booking.prototype.noLongerAvailable() = function() {
-//   this._property.noLongerAvailable;
+// Booking.prototype.noLongerAvailable = function() {
+//   this._property.noLongerAvailable();
 // };
