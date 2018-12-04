@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      <link type="text/css" rel="stylesheet" href="/Users/jacklyndunne/Documents/GitHub/makersbandb/public/style.css">
+  </head>
+  <body>
+
+      <h1>Login to Makers B&B</h1>
+      <br>
+      <a class="buttons" href='/'>Home</a>
+      <br>
+      <form action="/login" method="post">
+      <div id="innerForm">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+      </div>
+      <button id="submit" type="submit" name="Submit">Submit</button>
+    </form>
+
+  </body>
+</html>
