@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "cypress",
+    "chai-friendly"
+  ],
+  "extends": [
+    "plugin:cypress/recommended"
+  ],
+  "env": {
+    "cypress/globals": true
+  }
+  {
+  "scripts": {
+    "start": "my-server -p 3000",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3000 cy:run"
+  }
+}

@@ -33,8 +33,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
   /* GET home page. */
   app.get('/', function(req, res) {
@@ -42,14 +42,14 @@ app.use('/users', usersRouter);
   });
 
   /* GET signup page. */
-  app.get('/signup', function(req, res, next) {
+  app.get('/users', function(req, res, next) {
     res.render('signup', { title: 'APP TEST', errors: '' });
   });
 
   /* POST signup page. */
-  app.post('/signup/new-user', [check('first_name').not().isEmpty().withMessage('First Name is emty'),
-    check('second_name').not().isEmpty().withMessage('Second Name is emty'),
-    check('user_name').not().isEmpty().withMessage('User Name is emty'),
+  app.post('/users/new', [check('name').not().isEmpty().withMessage('First Name is emty'),
+    check('surname').not().isEmpty().withMessage('Second Name is emty'),
+    check('username').not().isEmpty().withMessage('User Name is emty'),
     check('email').isEmail().withMessage('Not an email'),
     check('password').isLength({ min: 5 }).withMessage('Minimun length for password are 5 character')] , (req, resp) =>{
 
@@ -57,7 +57,7 @@ app.use('/users', usersRouter);
   if (!errors.isEmpty()) {
     // console.log(errors.array());
     // return;
-    resp.render('signup', { 
+    resp.render('signup', {
       title: 'Makers B&B',
       errors: errors.array()
     });

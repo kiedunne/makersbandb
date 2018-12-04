@@ -10,7 +10,7 @@
         <h1 class='nav_title'>Makers B&B</h1>
         <div class ='button_container'>
           <a class="button_blue" href='/login'>Login</a>
-          <a class="button_red" href='/signup'>Sign up</a>
+          <a class="button_red" href='/users'>Sign up</a>
           <a class="button_green" href='/'>Properties</a>
         </div>
       </div>
@@ -20,20 +20,20 @@
      <% if(errors){ %>
     <% errors.forEach(function(error){ %>
           <h1> <%= error.msg %> </h1>
-     <% }) %>  
+     <% }) %>
     <% } %>
     </center>
     <div class='body_content'>
       <h2>Sign up to Makers B&B</h2>
       <br>
-      <form action="/signup/new-user" method="post">
+      <form action="/users/new" method="post">
       <div id="innerForm">
         <label>First name</label>
-        <input type="text" name="first_name">
+        <input type="text" name="name">
         <label>Second name</label>
-        <input type="text" name="second_name">
+        <input type="text" name="surname">
         <label>User name</label>
-        <input type="text" name="user_name">
+        <input type="text" name="username">
         <label for="email">Email:</label>
         <input type="email" name="email" required>
         <label for="password">Password:</label>
