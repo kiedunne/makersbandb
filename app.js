@@ -10,8 +10,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-const User = require(path.join(__dirname, 'model/user'));
-const Property = require(path.join(__dirname, 'model/property'));
+// const User = require(path.join(__dirname, 'model/user'));
+// const Property = require(path.join(__dirname, 'model/property'));
+
 // For validations
 var expressValidator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
@@ -82,8 +83,8 @@ app.use(cookieParser());
     res.render('login', { title: 'APP TEST' });
   });
 
-  app.listen(3000, function() {
-    console.log('Server started on port 3000');
-  })
+  // app.listen(3000, function() {
+  //   console.log('Server started on port 3000');
+  // })
 
 module.exports = app;
