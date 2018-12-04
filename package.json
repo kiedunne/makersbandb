@@ -1,5 +1,5 @@
 {
-  "name": "makersbandb",
+  "name": "makers_B&B",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,8 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
   }
 }
