@@ -9,27 +9,21 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+const User = require(path.join(__dirname, 'model/user'));
+const Property = require(path.join(__dirname, 'model/property'));
 
+// view engine setup
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(__dirname + '/public'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-app.get("/login", function (req, res) {
-    res.render('index', { title: 'Makers B&B' });
-
-  res.render("pages/login", {
-    msg: false,
-    name: name
-  });
-});
 
 
 module.exports = app;

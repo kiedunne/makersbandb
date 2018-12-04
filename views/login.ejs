@@ -2,23 +2,32 @@
 <html>
   <head>
     <title><%= title %></title>
-      <link type="text/css" rel="stylesheet" href="/Users/jacklyndunne/Documents/GitHub/makersbandb/public/style.css">
+      <link href="/style.css" rel="stylesheet" type="text/css">
+      <script src="./model/user.js"></script>
+      <script src="./jquery.js"></script>
+
+      <div class='nav_bar'>
+        <h1 class='nav_title'>Makers B&B</h1>
+        <div class ='button_container'>
+          <a class="button_blue" href='/login'>Login</a>
+          <a class="button_red" href='/signup'>Sign up</a>
+          <a class="button_green" href='/'>Properties</a>
+        </div>
+      </div>
   </head>
   <body>
-
-      <h1>Login to Makers B&B</h1>
+    <div class='body_content'>
+      <h2>Login to Makers B&B</h2>
       <br>
-      <a class="buttons" href='/'>Home</a>
-      <br>
-      <form action="/login" method="post">
-      <div id="innerForm">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-      </div>
-      <button id="submit" type="submit" name="Submit">Submit</button>
-    </form>
-
+        <form action="/login" method="post">
+        <div id="innerForm">
+          <label for="username">Username:</label>
+          <input type="username" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" name="password" required>
+        </div>
+        <button id="submit" type="submit" name="Submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
