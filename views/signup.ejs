@@ -16,22 +16,31 @@
       </div>
   </head>
   <body>
+    <center>
+     <% if(errors){ %>
+    <% errors.forEach(function(error){ %>
+          <h1> <%= error.msg %> </h1>
+     <% }) %>  
+    <% } %>
+    </center>
     <div class='body_content'>
       <h2>Sign up to Makers B&B</h2>
       <br>
-      <form action="/signup" method="post">
-
+      <form action="/signup/new-user" method="post">
       <div id="innerForm">
+        <label>First name</label>
+        <input type="text" name="first_name">
+        <label>Second name</label>
+        <input type="text" name="second_name">
+        <label>User name</label>
+        <input type="text" name="user_name">
         <label for="email">Email:</label>
-          <input type="email" name="email" required>
-        <label for="username">Username:</label>
-            <input type="username" name="username" required>
+        <input type="email" name="email" required>
         <label for="password">Password:</label>
-          <input type="password" name="password" required>
+        <input type="password" name="password" required>
       </div>
       <button id="submit" type="submit" name="Submit">Submit</button>
     </form>
-
   </div>
   </body>
 </html>
