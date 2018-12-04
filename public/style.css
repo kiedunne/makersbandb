@@ -1,0 +1,19 @@
+
+div.nav_bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1.nav_title {
+          font-family: arial;
+          color: #3f3d3d;
+          font-size: 70px;
+        }
+h2 {
+      font-family: arial;
+      text-align: center;
+      color: #3f3d3d;
+      font-size: 30px;
+      }
