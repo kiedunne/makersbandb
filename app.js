@@ -18,9 +18,10 @@ const { check, validationResult } = require('express-validator/check');
 
 // Global Variable
 
-router.use(function(req, resp, next){
+app.use(function(req, resp, next){
   resp.locals.errors = null;
   resp.locals.title = null;
+
   next();
 });
 
@@ -55,13 +56,10 @@ app.use('/users', usersRouter);
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    // console.log(errors.array());
-    // return;
     resp.render('signup', { 
       title: 'Makers B&B',
       errors: errors.array()
     });
-    // console.log(resp.status(422).json({ errors: errors.msg }));
   } else {
   var user;
   // INSERTION IN THE DATA BASE
@@ -80,6 +78,28 @@ app.use('/users', usersRouter);
   /* GET login page. */
   app.get('/login', function(req, res, next) {
     res.render('login', { title: 'APP TEST' });
+  });
+
+  //post login page
+
+  app.post('/login', [check('username').not().isEmpty().withMessage('User name empty'),
+    check('password').isLength({ min: 5 }).withMessage('Minimun length for password are 5 character')] , function(req, resp){
+    const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    resp.render('signup', { 
+      title: 'Makers B&B',
+      errors: errors.array()
+    });
+  } else {
+  var user;
+  // INSERTION IN THE DATA BASE
+  user = {
+    username: req.body.username,
+    password: req.body.password
+  }
+  console.log(user);
+  resp.redirect('/');
+  }
   });
 
   app.listen(3000, function() {
