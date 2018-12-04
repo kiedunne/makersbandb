@@ -18,7 +18,7 @@ exports.user_create = function (req, res, next) {
         if (err) { return next(err); }
         res.redirect('/');
         // res.send('User Registered successfully!')
-        res.render('signup', { title: 'Makers B&B' });
+        // res.render('signup', { title: 'Makers B&B' });
     })
 };
 
