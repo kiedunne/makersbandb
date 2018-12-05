@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Makers BNB</title>
-    <link href="/style.css" rel="stylesheet" type="text/css">
-    <script src="./model/user.js"></script>
-    <script src="./jquery.js"></script>
-
-    <div class='nav_bar'>
-      <h1 class='nav_title'>Makers B&B</h1>
-      <div class ='button_container'>
-        <a class="button_blue" href='/login'>Login</a>
-        <a class="button_red" href='/signup'>Sign up</a>
-        <a class="button_green" href='/signup'>Properties</a>
-      </div>
-    </div>
-  </head>
-
-  <body>
+<% include partials/header %>
     <p>Welcome to <%= title %></p>
     <div class='property_list'>
       <div class='property_row'>
           <div class='property_img'></div>
         </div>
-
-  </body>
-</html>
+<% include partials/footer %>

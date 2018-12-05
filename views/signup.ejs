@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-      <link href="/style.css" rel="stylesheet" type="text/css">
-      <script src="./model/user.js"></script>
-      <script src="./jquery.js"></script>
-
-      <div class='nav_bar'>
-        <h1 class='nav_title'>Makers B&B</h1>
-        <div class ='button_container'>
-          <a class="button_blue" href='/login'>Login</a>
-          <a class="button_red" href='/signup'>Sign up</a>
-          <a class="button_green" href='/'>Properties</a>
-        </div>
-      </div>
-  </head>
-  <body>
+<% include partials/header %>
     <center>
      <% if(errors){ %>
     <% errors.forEach(function(error){ %>
@@ -42,5 +25,5 @@
       <button id="submit" type="submit" name="Submit">Submit</button>
     </form>
   </div>
-  </body>
-</html>
+<% include partials/footer %>
+
