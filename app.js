@@ -3,6 +3,7 @@ const bodyParser   = require('body-parser');
 const user         = require('./routes/user.route');
 const index        = require('./routes/index.route');
 const property = require('./routes/properties.route');
+const booking = require('./routes/booking.route');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const path = require('path');
@@ -27,6 +28,7 @@ app.use(cookieSession({
 app.use('/', index);
 app.use('/users', user);
 app.use('/properties', property);
+app.use('/booking', booking);
 
 let port = 3000;
 app.listen(port, () => {
