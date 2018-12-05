@@ -1,4 +1,4 @@
-const Property = require('../models/properties.model');
+const Property = require('../schemas/properties.model');
 const expressValidator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
 
