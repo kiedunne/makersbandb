@@ -3,15 +3,12 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var cookieSession = require("cookie-session");
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
-// const User = require(path.join(__dirname, 'model/user'));
-// const Property = require(path.join(__dirname, 'model/property'));
 
 // For validations
 var expressValidator = require('express-validator');
@@ -33,9 +30,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cookieSession({
+  secret: "super-secret"
+}));
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
 
   /* GET home page. */
   app.get('/', function(req, res) {
@@ -83,6 +81,7 @@ app.use(cookieParser());
     res.render('login', { title: 'APP TEST' });
   });
 
+  /* Start server. */
   // app.listen(3000, function() {
   //   console.log('Server started on port 3000');
   // })
