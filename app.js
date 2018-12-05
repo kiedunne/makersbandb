@@ -7,35 +7,24 @@ var cookieSession = require("cookie-session");
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// var MongoStore = require('connect-mongo')(session);
-
+var database = require('database');
 var app = express();
 
-// //connect to MongoDB
-// mongoose.connect('mongodb://localhost/testForAuth');
-// var db = mongoose.connection;
-//
-// //handle mongo error
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function () {
-//   // we're connected!
-// });
+// Mongo Setup
+const mongoose = require('mongoose');
 
-// //use sessions for tracking logins
-// app.use(cookieSession({
-//   secret: "super-secret",
-//   store: new MongoStore({
-//     mongooseConnection: db
-//   })
-// }));
+const mongoDB = process.env.MONGODB_URI || database.url;
+mongoose.connect(mongoDB);
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 // For validations
 var expressValidator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
 
 // Global Variable
-
-
 app.use(function(req, resp, next){
 
   resp.locals.errors = null;
@@ -73,7 +62,7 @@ app.use(cookieParser());
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
 
-    resp.render('signup', { 
+    resp.render('signup', {
 
       title: 'Makers B&B',
       errors: errors.array()
@@ -105,7 +94,7 @@ app.use(cookieParser());
     check('password').isLength({ min: 5 }).withMessage('Minimun length for password are 5 character')] , function(req, resp){
     const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    resp.render('signup', { 
+    resp.render('signup', {
       title: 'Makers B&B',
       errors: errors.array()
     });
