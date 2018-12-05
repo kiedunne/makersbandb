@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-      <link href="../public/style.css" rel="stylesheet" type="text/css">
+      <link href="style.css" rel="stylesheet" type="text/css">
       <script src="./model/user.js"></script>
       <script src="./jquery.js"></script>
 
@@ -10,7 +10,7 @@
         <h1 class='nav_title'>Makers B&B</h1>
         <div class ='button_container'>
       <% if(user){ %>
-          <a class="button_red" href="/">Sign up!</a>
+          <a class="button_red" href="/">Log out!</a>
       <% } else{ %>
           <a class="button_blue" href='/login'>Login</a>
           <a class="button_red" href='/users'>Sign up</a>
