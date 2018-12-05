@@ -6,11 +6,11 @@ const { check, validationResult } = require('express-validator/check');
 exports.property_create = function (req, res, next) {
     let property = new Property(
         {
-            // name: req.body.name,
-            // surname: req.body.surname,
-            // username: req.body.username,
-            // email: req.body.email,
-            // password: req.body.password
+            name: req.body.name,
+            address: req.body.address,
+            rooms: req.body.rooms,
+            price: req.body.price,
+            owner_id: req.body.owner_id
         }
     );
 
