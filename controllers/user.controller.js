@@ -22,7 +22,13 @@ exports.user_create = function (req, res, next) {
     })
 };
 
+exports.user_login_check = function(req, res, next) {
+  User.findAll({
+    where: { username: req.params.username,
+             password: req.params.password }
 
+    });
+};
 
 // get method;
 exports.user_details = function (req, res, next) {

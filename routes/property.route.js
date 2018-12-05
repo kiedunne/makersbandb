@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const property_controller = require('../controllers/property.controller');
 
-router.post('/create', property_controller.property_create);
+router.post('/new', property_controller.property_create);
 
 router.get('/:id', property_controller.property_details);
 

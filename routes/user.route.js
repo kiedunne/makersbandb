@@ -6,12 +6,10 @@ router.post('/new', user_controller.user_create);
 
 router.get('/:id', user_controller.user_details);
 
-// router.get('/login', user_controller.user_login );
+router.post('/login/check', user_controller.user_login_check);
 
 router.put('/:id/update', user_controller.user_update);
 
 router.delete('/:id/delete', user_controller.user_delete);
-
-
 
 module.exports = router;
