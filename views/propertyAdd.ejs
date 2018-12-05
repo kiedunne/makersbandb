@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+    <!-- <center>
+     <% if(errors){ %>
+    <% errors.forEach(function(error){ %>
+          <h1> <%= error.msg %> </h1>
+     <% }) %>
+    <% } %>
+    </center> -->
+    <div class='body_content'>
+      <h2>Add a new properrty to MakersBNB</h2>
+      <br>
+      <form action="/properties/new" method="post">
+      <div id="innerForm">
+        <label>Property name</label>
+        <input type="text" name="name">
+        <label>Property address(City)</label>
+        <input type="text" name="address">
+        <label>How many bedrooms?</label>
+        <input type="number" name="rooms">
+        <label for="price">Price per night(in £):</label>
+        <input type="price" name="price" required>
+        <label for="owner_id">User name:</label>
+        <input type="text" name="owner_id" required>
+      </div>
+      <button id="submit" type="submit" name="Submit">Submit</button>
+    </form>
+  </div>
+<% include partials/footer %>

@@ -13,5 +13,8 @@ router.get('/login', function(req, res) {
   res.render('login');
 });
 
+router.get('/properties', function(req, res) {
+  res.render('propertyAdd')
+});
 
 module.exports = router;
