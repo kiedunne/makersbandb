@@ -69,7 +69,7 @@ app.use(cookieParser());
   user = {
     first_name: req.body.first_name,
     second_name: req.body.second_name,
-    user_name: req.body.user_name,
+    username: req.body.username,
     email: req.body.email,
     password: req.body.password
   }
