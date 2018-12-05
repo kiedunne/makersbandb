@@ -25,7 +25,7 @@ app.use(cookieSession({
 }));
 app.use('/', index);
 app.use('/users', user);
-app.use('/properties', property);
+// app.use('/properties', property);
 
 let port = 8000;
 app.listen(port, () => {
