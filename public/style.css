@@ -28,6 +28,7 @@ div.nav_bar {
             text-decoration: none;
             padding: 20px;
             transition-duration: 0.2s;
+            border: 2px solid transparent;
             }
 
       a.button_blue:hover, a:active {
@@ -49,6 +50,7 @@ div.nav_bar {
                 text-decoration: none;
                 padding: 20px;
                 transition-duration: 0.2s;
+                border: 2px solid transparent;
                 }
 
           a.button_red:hover, a:active {
@@ -70,6 +72,7 @@ div.nav_bar {
                       text-decoration: none;
                       padding: 20px;
                       transition-duration: 0.2s;
+                      border: 2px solid transparent;
                       }
 
                 a.button_green:hover, a:active {
