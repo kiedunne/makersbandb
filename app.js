@@ -7,22 +7,40 @@ var cookieSession = require("cookie-session");
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+// var MongoStore = require('connect-mongo')(session);
 
 var app = express();
+
+// //connect to MongoDB
+// mongoose.connect('mongodb://localhost/testForAuth');
+// var db = mongoose.connection;
+//
+// //handle mongo error
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function () {
+//   // we're connected!
+// });
+
+// //use sessions for tracking logins
+// app.use(cookieSession({
+//   secret: "super-secret",
+//   store: new MongoStore({
+//     mongooseConnection: db
+//   })
+// }));
 
 // For validations
 var expressValidator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
 
 // Global Variable
-
 router.use(function(req, resp, next){
   resp.locals.errors = null;
   resp.locals.title = null;
   next();
 });
 
-// view engine setup
+// View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
@@ -30,10 +48,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cookieSession({
-  secret: "super-secret"
-}));
-
 
   /* GET home page. */
   app.get('/', function(req, res) {
@@ -54,16 +68,13 @@ app.use(cookieSession({
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    // console.log(errors.array());
-    // return;
     resp.render('signup', {
       title: 'Makers B&B',
       errors: errors.array()
     });
-    // console.log(resp.status(422).json({ errors: errors.msg }));
   } else {
   var user;
-  // INSERTION IN THE DATA BASE
+  // Insertion in database
   user = {
     first_name: req.body.first_name,
     second_name: req.body.second_name,
@@ -82,8 +93,8 @@ app.use(cookieSession({
   });
 
   /* Start server. */
-  // app.listen(3000, function() {
-  //   console.log('Server started on port 3000');
-  // })
+    app.listen(3000, function() {
+    console.log('Server started on port 3000');
+    })
 
 module.exports = app;
