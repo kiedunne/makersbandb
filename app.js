@@ -34,9 +34,13 @@ var expressValidator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
 
 // Global Variable
-router.use(function(req, resp, next){
+
+
+app.use(function(req, resp, next){
+
   resp.locals.errors = null;
   resp.locals.title = null;
+
   next();
 });
 
@@ -68,7 +72,9 @@ app.use(cookieParser());
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    resp.render('signup', {
+
+    resp.render('signup', { 
+
       title: 'Makers B&B',
       errors: errors.array()
     });
@@ -92,8 +98,31 @@ app.use(cookieParser());
     res.render('login', { title: 'APP TEST' });
   });
 
-  /* Start server. */
-    app.listen(3000, function() {
+
+  //post login page
+
+  app.post('/login', [check('username').not().isEmpty().withMessage('User name empty'),
+    check('password').isLength({ min: 5 }).withMessage('Minimun length for password are 5 character')] , function(req, resp){
+    const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    resp.render('signup', { 
+      title: 'Makers B&B',
+      errors: errors.array()
+    });
+  } else {
+  var user;
+  // INSERTION IN THE DATA BASE
+  user = {
+    username: req.body.username,
+    password: req.body.password
+  }
+  console.log(user);
+  resp.redirect('/');
+  }
+  });
+
+  app.listen(3000, function() {
+
     console.log('Server started on port 3000');
     })
 
