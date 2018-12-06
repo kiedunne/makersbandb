@@ -24,40 +24,23 @@ exports.user_create = function (req, res, next) {
 
 // login post method;
 exports.user_login_check = function(req, res, next) {
-    var username = req.body.username;
-    var password = req.body.password;
-      User.findOne({ username: username, password: password }, function(err, user) {
+      User.findOne({ username: req.body.username, password: req.body.password }, function(err, user) {
         if(err) {
           console.log(err);
-        }
-        if(!user) {
-          console.log("no user");
+        } else if(!user) {
           res.redirect('/login');
-        }
-        req.session.user = user
-        console.log("found user!");
-        console.log(user)
-        res.redirect('/');
+        } else {
+          req.session.user = user
+          res.redirect('/');
+          }
       });
-    };
-
-// display user;
-exports.user_display = function(req, res, next) {
-    User.findOne({},function(err, user){
-        if (err) {
-          console.log(err);
-        } else{
-          console.log(user);
-          return user;
-        };
-    });
 };
 
 // logout get method;
-exports.user_logout = function (req, res, next) {
-      req.session.user = null;
-      res.redirect('/');
-    };
+exports.user_logout = function(req, res) {
+  req.session.user = {};
+  res.redirect('/');
+};
 
 // get method;
 exports.user_details = function (req, res, next) {
