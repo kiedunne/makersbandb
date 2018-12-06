@@ -1,6 +1,9 @@
 
 <% include partials/header %>
     <p>Welcome to <%= title %></p>
+    <% if(user){ %>
+          <h1> <%= user %> </h1>
+    <% }%>
     <div class='property_list'>
       <div class='property_row'>
           <div class='property_img'></div>
