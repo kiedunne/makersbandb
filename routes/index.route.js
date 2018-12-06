@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const properties_controller = require('../controllers/properties.controller');
 const Property = require('../schemas/properties.model');
+const User = require('../schemas/user.model');
+const user_controller = require('../controllers/user.controller');
 
 // Global Variable
 router.use(function(req, resp, next){
@@ -27,6 +29,20 @@ router.get('/', function(req, res) {
  // res.render('index', { title: 'APP TEST', user: 1, properties: properties_controller.propertyAll()});
 });
 
+// router.get('/', function(req, res) {
+//   User.findOne({},function(err, user){
+//       if (err) {
+//           console.log(err);
+//       } else{
+//           console.log(user);
+//           res.render('index',{
+//             title: 'APP TEST',
+//             user: user,
+//           });
+//       }
+//   });
+// });
+
 router.get('/users', function(req, res) {
   res.render('signup', { title: 'APP TEST'});
 });
@@ -34,6 +50,8 @@ router.get('/users', function(req, res) {
 router.get('/login', function(req, res) {
   res.render('login');
 });
+
+router.get('/logout', user_controller.user_logout);
 
 router.get('/properties', function(req, res) {
   res.render('propertyAdd');
