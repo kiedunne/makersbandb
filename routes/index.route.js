@@ -18,8 +18,8 @@ router.get('/', function(req, res) {
         } else{
             console.log(prop);
             res.render('index',{
-            	title: 'APP TEST',
-            	user: '5c0699d67c4dd2119cebbf04',
+            	title: 'Home',
+            	user: 0,
             	properties: prop
             });
         }
@@ -28,7 +28,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/users', function(req, res) {
-  res.render('signup', { title: 'APP TEST'});
+  res.render('signup', { title: 'Signup'});
 });
 
 router.get('/login', function(req, res) {
