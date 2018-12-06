@@ -22,15 +22,16 @@ exports.property_create = function (req, res, next) {
     })
 };
 
-// exports.propertyAll = function(req, resp, next){
-//     Property.find({},function(err, prop){
-//         if (err) {
-//             console.log(err);
-//         } else{
-//             console.log(prop);
-//         }
-//     });
-// };
+exports.propertyAll = function(req, resp, next){
+    Property.find({},function(err, prop){
+        if (err) {
+            console.log(err);
+        } else{
+            console.log(prop);
+            return prop;
+        }
+    });
+};
 
 
 // exports.user_login_check = function(req, res, next) {

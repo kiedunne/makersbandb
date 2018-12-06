@@ -41,6 +41,18 @@ exports.user_login_check = function(req, res, next) {
       });
     };
 
+// display user;
+exports.user_display = function(req, res, next) {
+    User.findOne({},function(err, user){
+        if (err) {
+          console.log(err);
+        } else{
+          console.log(user);
+          return user;
+        };
+    });
+};
+
 // logout get method;
 exports.user_logout = function (req, res, next) {
       req.session.user = null;
