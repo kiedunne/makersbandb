@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
             console.log(prop);
             res.render('index',{
             	title: 'APP TEST',
-            	user: 0,
+            	user: '5c0699d67c4dd2119cebbf04',
             	properties: prop
             });
         }

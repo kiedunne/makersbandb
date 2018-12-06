@@ -57,10 +57,11 @@ exports.property_create = function (req, res, next) {
 //     });
 // };
 
-// // delete method
-// exports.user_delete = function (req, res, next) {
-//     User.findByIdAndRemove(req.params.id, function (err) {
-//         if (err) { return next(err); }
-//         res.send('User Account Deleted successfully!');
-//     })
-// };
+// delete method
+exports.property_delete = function (req, res, next) {
+    Property.findOneAndRemove({owner_id: req.params.id}, function (err) {
+        if (err) { return next(err);
+         }
+    })
+    res.redirect('/');
+};
