@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 const properties_controller = require('../controllers/properties.controller');
 const Property = require('../schemas/properties.model');
-const User = require('../schemas/user.model');
 const user_controller = require('../controllers/user.controller');
+const User = require('../schemas/user.model');
 
 // Global Variable
 router.use(function(req, resp, next){
@@ -19,36 +19,24 @@ router.get('/', function(req, res) {
             console.log(err);
         } else{
             console.log(prop);
-            res.render('index',{
-            	title: 'APP TEST',
-            	user: '5c0699d67c4dd2119cebbf04',
-            	properties: prop
-            });
-        }
+            User.findOne({},function(err, user){
+              if (err) {
+                console.log(err);
+              } else{
+                console.log(user);
+                res.render('index', { title: 'APP TEST', user: user, properties: prop });
+              };
+          });
+        };
     });
- // res.render('index', { title: 'APP TEST', user: 1, properties: properties_controller.propertyAll()});
 });
-
-// router.get('/', function(req, res) {
-//   User.findOne({},function(err, user){
-//       if (err) {
-//           console.log(err);
-//       } else{
-//           console.log(user);
-//           res.render('index',{
-//             title: 'APP TEST',
-//             user: user,
-//           });
-//       }
-//   });
-// });
 
 router.get('/users', function(req, res) {
   res.render('signup', { title: 'APP TEST'});
 });
 
 router.get('/login', function(req, res) {
-  res.render('login');
+  res.render('login', { title: 'APP TEST'});
 });
 
 router.get('/logout', user_controller.user_logout);
