@@ -6,8 +6,12 @@
           <div class='property_img'></div>
         </div>
  <% if(properties){ %>
- 	<% properties.forEach(function(value){ %>
-          <h1> <%= value.name %> </h1>
+ 	<% properties.forEach(function(property){ %>
+          <h1> <%= property.name %> <%= property.price %>   </h1>
+          	<% if(property.owner_id === user){ %>
+          	<a class="button_red" href="/properties/<%= property.owner_id %>/delete">Delete</a>
+          	 <% } %>
+          </form>
      <% }) %>
 <% }%>
 <% include partials/footer %>
