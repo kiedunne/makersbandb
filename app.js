@@ -9,6 +9,8 @@ const cookieSession = require('cookie-session');
 const path = require('path');
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(__dirname + '/public'));
+
 const mongoose  = require('mongoose');
 
 let db_url = "mongodb://cesarecamurani:valhalla999@ds119164.mlab.com:19164/cesaredb";

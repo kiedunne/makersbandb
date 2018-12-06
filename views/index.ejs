@@ -1,9 +1,13 @@
 
 <% include partials/header %>
-
     <p>Welcome to <%= title %></p>
     <div class='property_list'>
       <div class='property_row'>
           <div class='property_img'></div>
         </div>
+ <% if(properties){ %>
+ 	<% properties.forEach(function(value){ %>
+          <h1> <%= value.name %> </h1>
+     <% }) %>
+<% }%>
 <% include partials/footer %>
