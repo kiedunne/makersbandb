@@ -1,6 +1,6 @@
 
 <% include partials/header %>
-    <p>Welcome to <%= title %></p>
+ <p>Welcome to <%= title %></p>
     <div class='property_list'>
       <div class='property_row'>
           <div class='property_img'></div>
@@ -20,16 +20,13 @@
 				   </thead>
 
 				   <tbody>
-				   	<% if(properties){ %>
-				   	<% properties.forEach(function(property){ %>
+				   	<% if(propertyDetails){ %>
 				   	<tr>
-				      <td><%= property.name %></td>
-				       <td><%= property.address %></td>
-				       <td><%= property.rooms %></td>
-				       <td><%= property.price %></td>
-				       <td><a class="btn btn-success" href="#">Book it!</a></td>
-				       <td><a class="btn btn-info" href="/properties/<%= property.id %>">More info?</a></td>
-				       <% }) %>
+				      <td><%= propertyDetails.name %></td>
+				       <td><%= propertyDetails.address %></td>
+				       <td><%= propertyDetails.rooms %></td>
+				       <td><%= propertyDetails.price %></td>
+				       <td><a class="btn btn-danger" href="#">Book it!</a></td>
 				       <% }%>
 				   </tr>
 				</tbody>

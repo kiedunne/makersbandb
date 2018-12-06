@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
             });
         }
     });
- // res.render('index', { title: 'APP TEST', user: 1, properties: properties_controller.propertyAll()});
+ //res.render('index', { title: 'APP TEST', user: 1, properties: properties_controller.propertyAll()});
 });
 
 router.get('/users', function(req, res) {
