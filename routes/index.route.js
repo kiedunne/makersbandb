@@ -22,6 +22,7 @@ router.get('/', function(req, res) {
         if (err) {
           console.log(err);
         } else{
+
           res.render('index', { title: 'APP TEST', user: user, properties: prop });
         };
       });
@@ -30,7 +31,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/users', function(req, res) {
-  res.render('signup', { title: 'APP TEST'});
+  res.render('signup', { title: 'Signup'});
 });
 
 router.get('/login', function(req, res) {

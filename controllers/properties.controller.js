@@ -22,15 +22,42 @@ exports.property_create = function (req, res, next) {
     })
 };
 
-exports.propertyAll = function(req, resp, next){
-    Property.find({},function(err, prop){
-        if (err) {
-            console.log(err);
-        } else{
-            return prop;
-        }
-    });
+
+// delete method
+exports.property_delete = function (req, res, next) {
+    Property.findOneAndRemove({owner_id: req.params.id}, function (err) {
+        if (err) { return next(err);
+         }
+    })
+    res.redirect('/');
 };
+
+// get method;
+exports.property_details = function (req, res, next) {
+    Property.findById(req.params.id, function (err, prop) {
+        if (err) { return next(err); }else{
+            console.log(prop);
+            res.render('propertyDetails',{
+                title: 'APP TEST',
+                user: '5c0699d67c4dd2119cebbf04',
+                propertyDetails: prop
+            });
+        }
+    })
+};
+
+// exports.propertyAll = function(req, resp, next){
+//     Property.find({},function(err, prop){
+//         if (err) {
+//             console.log(err);
+//         }else{
+//         console.log(prop);
+//         properties: prop;
+//         return;
+//         }
+//     });
+// };
+
 
 
 // exports.user_login_check = function(req, res, next) {
@@ -41,13 +68,6 @@ exports.propertyAll = function(req, resp, next){
 //     });
 // };
 
-// // get method;
-// exports.user_details = function (req, res, next) {
-//     User.findById(req.params.id, function (err, user) {
-//         if (err) { return next(err); }
-//         res.send(user);
-//     })
-// };
 
 // // put(update) method;
 // exports.user_update = function (req, res, next) {
@@ -57,11 +77,3 @@ exports.propertyAll = function(req, resp, next){
 //     });
 // };
 
-// delete method
-exports.property_delete = function (req, res, next) {
-    Property.findOneAndRemove({owner_id: req.params.id}, function (err) {
-        if (err) { return next(err);
-         }
-    })
-    res.redirect('/');
-};

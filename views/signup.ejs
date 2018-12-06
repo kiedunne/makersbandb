@@ -1,31 +1,64 @@
 
-<% include partials/header %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Makers B&B</title>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="style.css" rel="stylesheet" type="text/css">
+      <script src="./model/user.js"></script>
+      <script src="./jquery.js"></script>
+
+      <div class='nav_bar'>
+          <h2 class='nav_title'> Makers B&B </h2>
+        <div class ='button_container'>
+
+      <% if(user){ %>
+          <a class="square_btn35" href='/'><font face="courier">Home</a>
+          <a class="square_btn35" href='/'><font face="courier">Log out</a>
+          <!-- <a class="square_btn35" href="/">Add property</a> -->
+      <% } else { %>
+
+          <a class="square_btn35" href='/login'><font face="courier">Login</font></a>
+          <a class="square_btn35" href='/users'><font face="courier">Sign up</font></a>
+          <a class="square_btn35" href='/'><font face="courier">Home</a>
+          <% } %>
+
+        </div>
+
+      </div>
+  </head>
+  <body>
+
+
+<% if(errors){ %>
+<% errors.forEach(function(error){ %>
+     <h1> <%= error.msg %> </h1>
+<% }) %>
+<% } %>
 
     <center>
-     <% if(errors){ %>
-    <% errors.forEach(function(error){ %>
-          <h1> <%= error.msg %> </h1>
-     <% }) %>
-    <% } %>
-    </center>
     <div class='body_content'>
-      <h2>Sign up to Makers B&B</h2>
+      <h2> Sign up </h2>
       <br>
+      <font face="courier">
       <form action="/users/new" method="post">
       <div id="innerForm">
-        <label>First name</label>
-        <input type="text" name="name">
-        <label>Second name</label>
-        <input type="text" name="surname">
-        <label>User name</label>
-        <input type="text" name="username">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <label for="password">Password:</label>
+        <label for="name"> Name </label><br>
+        <input type="name" name="name"><br>
+        <label for="surname"> Surname </label><br>
+        <input type="surname" name="surname"><br>
+        <label for="username"> Username </label><br>
+        <input type="username" name="username"><br>
+        <label for="email"> Email: </label><br>
+        <input type="email" name="email" required><br>
+        <label for="password">Password:</label><br>
         <input type="password" name="password" required>
-      </div>
-      <button id="submit" type="submit" name="Submit">Submit</button>
+      </div><br>
+      <button id="submit" type="submit" name="Submit"> Register </button>
     </form>
+    </font>
   </div>
-<% include partials/footer %>
-
+  </center>
+</body>
+</html>
