@@ -27,7 +27,6 @@ exports.propertyAll = function(req, resp, next){
         if (err) {
             console.log(err);
         } else{
-            console.log(prop);
             return prop;
         }
     });

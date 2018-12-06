@@ -15,20 +15,18 @@ router.use(function(req, resp, next){
 
 router.get('/', function(req, res) {
 	Property.find({},function(err, prop){
+    if (err) {
+      console.log(err);
+    } else{
+      User.findOne({ _id: req.session.user._id },function(err, user){
         if (err) {
-            console.log(err);
+          console.log(err);
         } else{
-            console.log(prop);
-            User.findOne({},function(err, user){
-              if (err) {
-                console.log(err);
-              } else{
-                console.log(user);
-                res.render('index', { title: 'APP TEST', user: user, properties: prop });
-              };
-          });
+          res.render('index', { title: 'APP TEST', user: user, properties: prop });
         };
-    });
+      });
+    };
+  });
 });
 
 router.get('/users', function(req, res) {
@@ -39,7 +37,7 @@ router.get('/login', function(req, res) {
   res.render('login', { title: 'APP TEST'});
 });
 
-router.get('/logout', user_controller.user_logout);
+router.get('/logout', user_controller.user_logout)
 
 router.get('/properties', function(req, res) {
   res.render('propertyAdd');
