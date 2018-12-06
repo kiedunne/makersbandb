@@ -4,10 +4,14 @@ const user         = require('./routes/user.route');
 const index        = require('./routes/index.route');
 const property = require('./routes/properties.route');
 const booking = require('./routes/booking.route');
+
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
+const session = require('express-session')
 const path = require('path');
+
 const app = express();
+
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
 
@@ -29,6 +33,8 @@ app.use(cookieSession({
 }));
 app.use('/', index);
 app.use('/users', user);
+app.use('/login', user);
+app.use('/logout', user);
 app.use('/properties', property);
 app.use('/booking', booking);
 
