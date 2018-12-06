@@ -6,7 +6,7 @@ router.post('/new', user_controller.user_create);
 
 router.get('/:id', user_controller.user_details);
 
-router.post('/login/check', user_controller.user_login_check);
+router.post('/check', user_controller.user_login_check);
 
 router.put('/:id/update', user_controller.user_update);
 
