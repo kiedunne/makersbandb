@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,6 +30,12 @@
       </div>
   </head>
   <body>
+
+    <p>Welcome to <%= title %></p>
+    <% if(user){ %>
+          <h1> <%= user.username %> </h1>
+    <% }%>
+
     <div class='property_list'>
       <div class='property_row'>
         <div class='property_img'></div>

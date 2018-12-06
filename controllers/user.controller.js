@@ -22,12 +22,24 @@ exports.user_create = function (req, res, next) {
     })
 };
 
+// login post method;
 exports.user_login_check = function(req, res, next) {
-  User.findAll({
-    where: { username: req.params.username,
-             password: req.params.password }
+      User.findOne({ username: req.body.username, password: req.body.password }, function(err, user) {
+        if(err) {
+          console.log(err);
+        } else if(!user) {
+          res.redirect('/login');
+        } else {
+          req.session.user = user
+          res.redirect('/');
+          }
+      });
+};
 
-    });
+// logout get method;
+exports.user_logout = function(req, res) {
+  req.session.user = {};
+  res.redirect('/');
 };
 
 // get method;

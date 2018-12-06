@@ -6,11 +6,11 @@ const { check, validationResult } = require('express-validator/check');
 exports.property_create = function (req, res, next) {
     let property = new Property(
         {
-            // name: req.body.name,
-            // surname: req.body.surname,
-            // username: req.body.username,
-            // email: req.body.email,
-            // password: req.body.password
+            name: req.body.name,
+            address: req.body.address,
+            rooms: req.body.rooms,
+            price: req.body.price,
+            user_id: req.body.user_id
         }
     );
 
@@ -21,6 +21,7 @@ exports.property_create = function (req, res, next) {
         // res.render('signup', { title: 'Makers B&B' });
     })
 };
+
 
 // delete method
 exports.property_delete = function (req, res, next) {
@@ -56,6 +57,7 @@ exports.property_details = function (req, res, next) {
 //         }
 //     });
 // };
+
 
 
 // exports.user_login_check = function(req, res, next) {

@@ -1,0 +1,24 @@
+
+<% include partials/header %>
+
+  
+    <div class='body_content'>
+      <h2>Sign up to Makers B&B</h2>
+      <br>
+      <form action="/properties/new" method="post">
+      <div id="innerForm">
+        <label>Property name</label>
+        <input type="text" name="name">
+        <label>Address (city)</label>
+        <input type="text" name="address">
+        <label>How many bedrooms?</label>
+        <input type="number" name="rooms">
+        <label for="price">Price per night (£)</label>
+        <input type="number" name="price" required>
+        <label for="user_id">Username:</label>
+        <input type="text" name="user_id" required>
+      </div>
+      <button id="submit" type="submit" name="Submit">Submit</button>
+    </form>
+  </div>
+<% include partials/footer %>
