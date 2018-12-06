@@ -7,7 +7,7 @@ let PropertySchema = new Schema({
     rooms: {type: Number, required: true},
     price: {type: Number, required: true},
     // picture: {type: String, required: true},
-    user_id: {type: String, required: true, max: 100}
+    owner_id: {type: String, required: true, max: 100}
 });
 
 

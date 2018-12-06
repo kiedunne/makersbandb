@@ -10,7 +10,7 @@ exports.property_create = function (req, res, next) {
             address: req.body.address,
             rooms: req.body.rooms,
             price: req.body.price,
-            user_id: req.body.user_id
+            owner_id: req.session.user._id
         }
     );
 
@@ -76,4 +76,3 @@ exports.property_details = function (req, res, next) {
 //         res.send('User Details updated successfully.');
 //     });
 // };
-
