@@ -25,11 +25,13 @@ exports.property_create = function (req, res, next) {
 
 // delete method
 exports.property_delete = function (req, res, next) {
-    Property.findOneAndRemove({owner_id: req.params.id}, function (err) {
+console.log('loop');
+console.log(req.params);
+    Property.findOneAndRemove({owner_id: req.session.user._id, _id: req.params._id}, function (err) {
         if (err) { return next(err);
          }
     })
-    res.redirect('/');
+    res.redirect('/users/account');
 };
 
 // get method;

@@ -69,7 +69,6 @@ exports.user_delete = function (req, res, next) {
 
 // get method to lead to individual user page
 exports.user_details = function(req, res, next) {
-
   Property.find({ owner_id: req.session.user._id },function(err, prop){
     if (err) {
       console.log(err);
