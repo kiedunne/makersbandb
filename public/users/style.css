@@ -1,0 +1,103 @@
+h2.nav_title {
+      font-family: courier ;
+      color: black;
+      font-size: 50px;
+      margin: 10px;
+    }
+div.nav_bar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      border:1px solid #ff7f7f;
+    }
+    div.button_container {
+          display: flex;
+          flex-direction: row;
+          align-self:flex-start;
+          margin-top: 10px;
+          margin-left: 33%;
+        }
+
+                      a.square_btn35{
+    display: inline-block;
+    position: relative;
+    padding: 0.5em 1em;
+    margin: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: .4s;
+}
+a.square_btn35:hover {
+    color:#ff7f7f;
+}
+a.square_btn35:before,.square_btn35:after{
+  position: absolute;
+  top: 0;
+  content:'';
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+}
+a.square_btn35:before{
+  border-left: solid 1px #ff7f7f;
+  border-top: solid 1px #ff7f7f;
+  border-bottom: solid 1px #ff7f7f;
+  left: 0;
+}
+a.square_btn35:after{
+  content: '';
+  border-top: solid 1px #ff7f7f;
+  border-right: solid 1px #ff7f7f;
+  border-bottom: solid 1px #ff7f7f;
+  right: 0;
+}
+
+h2 {
+      font-family: courier;
+      text-align: center;
+      color: #3f3d3d;
+      font-size: 30px;
+      }
+
+div.body_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
+}
+
+input[type=submit] {
+  font-weight: lighter;
+  background-color: #E35349;
+  font-size: 30px;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+  width: 100%;
+
+}
+  input[type=submit]:hover {
+    opacity: 0.5;
+  }
+
+input[type=text] {
+  font-weight: lighter;
+  font-size: 20px;
+  color: #3f3d3d;
+  border-radius: 10px;
+  width: 100%;
+  border-style: none;
+  outline: none;
+}
+
+.table-wrapper-scroll-y {
+display: block;
+max-height: 300px;
+overflow-y: auto;
+-ms-overflow-style: -ms-autohiding-scrollbar;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Try to book now!!!</title>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="style.css" rel="stylesheet" type="text/css">
+      <script src="./model/user.js"></script>
+      <script src="./jquery.js"></script>
+
+      <div class='nav_bar'>
+          <h2 class='nav_title'> Makers B&B </h2>
+        <div class ='button_container'>
+
+      <% if(user){ %>
+          <a class="square_btn35" href='/'><font face="courier">Home</a>
+          <a class="square_btn35" href='/logout'><font face="courier">Log out</a>
+          <a class="square_btn35" href='/users/account'><font face="courier">Your account</a>
+      <% } else { %>
+
+          <a class="square_btn35" href='/login'><font face="courier">Login</font></a>
+          <a class="square_btn35" href='/users'><font face="courier">Sign up</font></a>
+          <a class="square_btn35" href='/'><font face="courier">Home</a>
+          <% } %>
+
+        </div>
+
+      </div>
+  </head>
+  <body>
+    <center>
+      <br><br>
+      <h1> Sorry Dude we're not that far yet!</h1>
+    </center>
+  </body>
+</html>

@@ -29,8 +29,9 @@
   </head>
   <body>
 
-
+    <br>
     <center>
+    <p><h2> Profile Page </h2></p><br>
     <% if(user){ %>
           <h4> Hi <%= user.username %>, welcome to your account page </h4>
     <% }%>
@@ -62,7 +63,7 @@
 				           <td><%= property.address %></td>
 				           <td><%= property.rooms %></td>
 				           <td><%= property.price %></td>
-				           <td><a class="square_btn35" href="#">Delete?</a></td>
+				           <td><a class="square_btn35" id="Delete" value="<%= property._id%>" href="/deleteProp/<%= property._id %>">Delete?</a></td>
 				           <td><a class="square_btn35" href="/#">Update details?</a></td>
 				         <% }) %>
 				         <% } %>
