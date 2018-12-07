@@ -14,7 +14,7 @@ router.use(function(req, resp, next){
 //
 
 router.get('/', function(req, res) {
-	Property.find({},function(err, prop){
+  Property.find({},function(err, prop){
     if (err) {
       console.log(err);
     } else{
@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
           console.log(err);
         } else{
 
-          res.render('index', { title: 'APP TEST', user: user, properties: prop });
+          res.render('index', { title: 'Home', user: user, properties: prop });
         };
       });
     };
@@ -35,7 +35,7 @@ router.get('/users', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-  res.render('login', { title: 'APP TEST'});
+  res.render('login', { title: 'Login'});
 });
 
 router.get('/logout', user_controller.user_logout)
