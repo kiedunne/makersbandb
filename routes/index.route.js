@@ -18,14 +18,17 @@ router.get('/', function(req, res) {
     if (err) {
       console.log(err);
     } else{
-      User.findOne({ _id: req.session.user._id },function(err, user){
-        if (err) {
-          console.log(err);
-        } else{
-
-          res.render('index', { title: 'Home', user: user, properties: prop });
-        };
-      });
+        if(req.session.user) {
+          User.findOne({ _id: req.session.user._id },function(err, user){
+            if (err) {
+              console.log(err);
+            } else{
+              res.render('index', { title: 'Home', user: user, properties: prop });
+            };
+          });
+        }else {
+          res.render('index', { title: 'Home', user: 0, properties: prop });
+        }
     };
   });
 });
