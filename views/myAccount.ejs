@@ -16,7 +16,6 @@
           <a class="square_btn35" href='/'><font face="courier">Home</a>
           <a class="square_btn35" href='/logout'><font face="courier">Log out</a>
           <a class="square_btn35" href='/properties'><font face="courier">Add a property</a>
-          <!-- <a class="square_btn35" href="/">Add property</a> -->
       <% } else { %>
 
           <a class="square_btn35" href='/login'><font face="courier">Login</font></a>
@@ -30,11 +29,13 @@
   </head>
   <body>
 
-    <p></p>
-    <% if(user){ %>
-          <h1> Hi <%= user.username %>, welcome to your account page </h1>
-    <% }%>
 
+    <center>
+    <% if(user){ %>
+          <h4> Hi <%= user.username %>, welcome to your account page </h4>
+    <% }%>
+    <center>
+      <br>
     <div class='property_list'>
       <div class='property_row'>
         <div class='property_img'></div>
