@@ -6,6 +6,8 @@ let PropertySchema = new Schema({
     address: {type: String, required: true, max: 100},
     rooms: {type: Number, required: true},
     price: {type: Number, required: true},
+    start_date: {type:Date, required: true},
+    end_date: {type:Date, required: true},
     // picture: {type: String, required: true},
     owner_id: {type: String, required: true, max: 100}
 });

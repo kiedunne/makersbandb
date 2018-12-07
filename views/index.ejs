@@ -50,8 +50,8 @@
 				          <th scope="col"> Address </th>
 				          <th scope="col"> Rooms </th>
 				          <th scope="col"> Price(£) </th>
-				          <th scope="col"> </th>
-				          <th scope="col"> </th>
+				          <th scope="col"> Available from:</th>
+				          <th scope="col"> Available to:</th>
 				         </tr>
 				       </thead>
                <tbody>
@@ -62,6 +62,8 @@
 				           <td><%= property.address %></td>
 				           <td><%= property.rooms %></td>
 				           <td><%= property.price %></td>
+                   <td><%= property.start_date %></td>
+                   <td><%= property.end_date %></td>
 				           <td><a class="square_btn35" href="/bookings">Book now!</a></td>
 				           <td><a class="square_btn35" href="/properties/<%= property.id %>">More info?</a></td>
 				         <% }) %>

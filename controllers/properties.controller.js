@@ -10,6 +10,8 @@ exports.property_create = function (req, res, next) {
             address: req.body.address,
             rooms: req.body.rooms,
             price: req.body.price,
+            start_date: req.body.start_date,
+            end_date: req.body.end_date,
             owner_id: req.session.user._id
         }
     );
