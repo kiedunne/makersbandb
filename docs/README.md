@@ -23,7 +23,7 @@ Open up localhost:3000 in any browser.
 ### For testing in Cypress
 
 On app.js, comment out:
-```
+```javascript
 app.listen(3000, function() {
   console.log('Server started on port 3000');
 })
