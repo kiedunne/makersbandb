@@ -9,6 +9,6 @@ router.get('/:id', property_controller.property_details);
 
 // router.put('/:id/update', property_controller.property_update);
 
-router.get('/:id/delete', property_controller.property_delete);
+router.get('/delete', property_controller.property_delete);
 
 module.exports = router;
