@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Makers B&B</title>
@@ -11,42 +12,33 @@
           <h2 class='nav_title'> Makers B&B </h2>
         <div class ='button_container'>
 
-      <% if(user){ %>
+
           <a class="square_btn35" href='/'><font face="courier">Home</a>
           <a class="square_btn35" href='/logout'><font face="courier">Log out</a>
-          <!-- <a class="square_btn35" href="/">Add property</a> -->
-      <% } else { %>
-
-          <a class="square_btn35" href='/login'><font face="courier">Login</font></a>
-          <a class="square_btn35" href='/users'><font face="courier">Sign up</font></a>
-          <a class="square_btn35" href='/'><font face="courier">Home</a>
-          <% } %>
+          <a class="square_btn35" href="/users/account">Back to Account</a>
 
         </div>
 
       </div>
   </head>
   <body>
-
+    <center>
     <div class='body_content'>
       <h2> Add a Property: </h2>
       <br>
       <form action="/properties/new" method="post">
       <div id="innerForm">
-        <label>Property name</label>
-        <input type="text" name="name">
-        <label>Address (city)</label>
-        <input type="text" name="address">
-        <label>How many bedrooms?</label>
-        <input type="number" name="rooms">
-        <label for="price">Price per night (£)</label>
-        <input type="number" name="price" required>
-        <!-- <label for="user_id">Username:</label>
-        <input type="text" name="user_id" required> -->
-      </div>
-      <button id="submit" type="submit" name="Submit">Submit</button>
+        <label for="name"> Property Name </label><br>
+        <input type="name" name="name"><br>
+        <label for="address"> Address(City) </label><br>
+        <input type="address" name="address"><br>
+        <label for="rooms"> How many Bedrooms?</label><br>
+        <input type="number" name="rooms"><br>
+        <label for="price"> Price(£) </label><br>
+        <input type="number" name="price" required><br><br>
+      <button id="submit" type="submit" name="Submit">List It</button>
     </form>
   </div>
-
+  </center>
 </body>
 </html>
