@@ -1,9 +1,35 @@
+<html>
+  <head>
+    <title>Makers B&B</title>
 
-<% include partials/header %>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="style.css" rel="stylesheet" type="text/css">
+      <script src="./model/user.js"></script>
+      <script src="./jquery.js"></script>
 
+      <div class='nav_bar'>
+          <h2 class='nav_title'> Makers B&B </h2>
+        <div class ='button_container'>
+
+      <% if(user){ %>
+          <a class="square_btn35" href='/'><font face="courier">Home</a>
+          <a class="square_btn35" href='/logout'><font face="courier">Log out</a>
+          <!-- <a class="square_btn35" href="/">Add property</a> -->
+      <% } else { %>
+
+          <a class="square_btn35" href='/login'><font face="courier">Login</font></a>
+          <a class="square_btn35" href='/users'><font face="courier">Sign up</font></a>
+          <a class="square_btn35" href='/'><font face="courier">Home</a>
+          <% } %>
+
+        </div>
+
+      </div>
+  </head>
+  <body>
 
     <div class='body_content'>
-      <h2>Sign up to Makers B&B</h2>
+      <h2> Add a Property: </h2>
       <br>
       <form action="/properties/new" method="post">
       <div id="innerForm">
@@ -21,4 +47,6 @@
       <button id="submit" type="submit" name="Submit">Submit</button>
     </form>
   </div>
-<% include partials/footer %>
+
+</body>
+</html>
