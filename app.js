@@ -31,6 +31,7 @@ app.use('/login', user);
 app.use('/logout', user);
 app.use('/properties', property);
 app.use('/bookings', booking);
+
 let port = 3000;
 app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);

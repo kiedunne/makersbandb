@@ -49,34 +49,3 @@ exports.property_details = function (req, res, next) {
         }
     })
 };
-
-// exports.propertyAll = function(req, resp, next){
-//     Property.find({},function(err, prop){
-//         if (err) {
-//             console.log(err);
-//         }else{
-//         console.log(prop);
-//         properties: prop;
-//         return;
-//         }
-//     });
-// };
-
-
-
-// exports.user_login_check = function(req, res, next) {
-//   User.findAll({
-//     where: { username: req.params.username,
-//              password: req.params.password }
-
-//     });
-// };
-
-
-// // put(update) method;
-// exports.user_update = function (req, res, next) {
-//     User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, user) {
-//         if (err) { return next(err); }
-//         res.send('User Details updated successfully.');
-//     });
-// };

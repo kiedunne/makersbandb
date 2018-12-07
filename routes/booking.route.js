@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const property_controller = require('../controllers/booking.controller');
+const booking_controller = require('../controllers/booking.controller');
 
 
-router.get('/', function(req, res) {
-  res.render('try_to_book');
-});
+router.post('/new', booking_controller.booking_create);
+
+// router.get('/:id', booking_controller.booking_details);
+
+// router.delete('/delete', booking_controller.booking_delete);
 
 module.exports = router;

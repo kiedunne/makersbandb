@@ -50,5 +50,9 @@ router.get('/properties', function(req, res) {
   res.render('propertyAdd');
 });
 
+router.get('/bookings', function(req, res) {
+  res.render('bookingAdd');
+});
+
 
 module.exports = router;
