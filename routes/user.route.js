@@ -4,7 +4,7 @@ const user_controller = require('../controllers/user.controller');
 
 router.post('/new', user_controller.user_create);
 
-router.get('/:id', user_controller.user_details);
+router.get('/account', user_controller.user_details);
 
 router.post('/check', user_controller.user_login_check);
 

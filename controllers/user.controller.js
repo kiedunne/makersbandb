@@ -1,4 +1,5 @@
 const User = require('../schemas/user.model');
+const Property = require('../schemas/properties.model');
 const expressValidator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
 
@@ -64,4 +65,23 @@ exports.user_delete = function (req, res, next) {
         if (err) { return next(err); }
         res.send('User Account Deleted successfully!');
     })
+};
+
+// get method to lead to individual user page
+exports.user_details = function(req, res, next) {
+
+  Property.find({ owner_id: req.session.user._id },function(err, prop){
+    if (err) {
+      console.log(err);
+    } else{
+      User.findOne({ _id: req.session.user._id },function(err, user){
+        if (err) {
+          console.log(err);
+        } else{
+          console.log(prop);
+          res.render('myAccount', { title: 'APP TEST', user: user, properties: prop });
+        };
+      });
+    };
+  });
 };
