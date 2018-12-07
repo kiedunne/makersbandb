@@ -61,6 +61,12 @@ As a MakersB&B user,
 So other members have relevant details about my advertise properties,
 I can post a property with a name, description and price
 ```
+### Technology
+- Javascript
+- Express
+- MongoDB
+- Jasmine
+- Cypress
 
 ## Planning
 
