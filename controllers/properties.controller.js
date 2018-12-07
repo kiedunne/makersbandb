@@ -16,7 +16,7 @@ exports.property_create = function (req, res, next) {
 
     property.save(function (err) {
         if (err) { return next(err); }
-        res.redirect('/');
+        res.redirect('/users/account');
         // res.send('User Registered successfully!')
         // res.render('signup', { title: 'Makers B&B' });
     })
